@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="java.sql.Array"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -127,36 +129,13 @@
 									</div>
 
 								</div>
-								<%
-								String user=(String)request.getParameter("userNameInput");
-
-								String driver = "com.mysql.jdbc.Driver";
-								String connectionUrl = "jdbc:mysql://localhost:3306/dialee";
-								String userName = "root";
-								String passWord = "";
-								try {
-									Class.forName(driver);
-									Connection conn = DriverManager.getConnection(connectionUrl, userName, passWord);
-								%>
-								<%
-								String sql = "SELECT userNameInput FROM usersignup";
-								Statement stmt = conn.createStatement();
-								ResultSet rs = stmt.executeQuery(sql);
-								%>
 								<br>
 								<div id="signInButton">
 									<input type="submit" value="Sign up"
 										class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">
 
 								</div>
-								<%
 								
-								conn.close();
-								} catch (Exception e) {
-								e.printStackTrace();
-
-								}
-								%>
 							</div>
 						</form>
 					</div>
