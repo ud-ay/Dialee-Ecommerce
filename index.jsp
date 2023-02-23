@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
@@ -37,7 +39,7 @@
 								src="assets/images/DialeeLogo.png" alt="" width="180"
 								height="28.3" />
 							</a>
-							
+
 
 							<div
 								class="collapse navbar-collapse sub-menu-bar nav justify-content-end"
@@ -65,7 +67,7 @@
 
 
 	<section id="home" class="hero-section">
-		
+
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6">
@@ -108,6 +110,8 @@
 			String sql = "SELECT state FROM category";
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
+			List<String> stateList = new ArrayList<String>();
+			boolean status = false;
 			%>
 			<form action="index.jsp" method="post">
 				<div class="row">
@@ -120,6 +124,8 @@
 								<%=rs.getString("state")%>
 							</option>
 							<%
+							String data = rs.getString("state");
+							stateList.add(data);
 							}
 							%>
 						</select>
@@ -133,8 +139,16 @@
 			<%
 			String selected = request.getParameter("stateOptions");
 			%>
-			<%-- <p>
-				Selected state:<%=selected%></p> --%>
+			<p>
+				Selected state:<%=selected%></p>
+			<%
+			if (selected != null) {
+			%>
+			<jsp:forward page="locateStore.jsp"></jsp:forward>
+			<%
+			}
+			%>
+
 			<%
 			conn.close();
 			} catch (Exception e) {
@@ -142,6 +156,7 @@
 
 			}
 			%>
+
 		</div>
 	</section>
 
