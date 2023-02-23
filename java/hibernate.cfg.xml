@@ -10,5 +10,7 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<mapping resource="signUpPage.hbm.xml" />
+		<mapping resource="shopRegistrationPage.hbm.xml" />
+
 	</session-factory>
 </hibernate-configuration>
