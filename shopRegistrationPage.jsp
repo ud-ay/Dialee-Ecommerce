@@ -147,7 +147,7 @@
 		return true;
 	}
 
-	function getStateValue(select) {
+	/* function getStateValue(select) {
 		var selectedStateValue = select.value;
 		document.cookie = "selectedStateValue=" + selectedStateValue;
 
@@ -156,7 +156,7 @@
 		var selectedCategory = select.value;
 		document.getElementById("hiddenField3").value = selectedCategory;
 		document.cookie = "selectedCategory=" + selectedCategory;
-	}
+	} */
 </script>
 <body>
 	<%
@@ -197,7 +197,7 @@
 			<br>
 			<div class="container"></div>
 			<div class="col" id="shopInformation">
-				<form action="" onsubmit="return signInValidation()">
+				<form action="shopRegistrationProcessingPage.jsp" method="post" onsubmit="return signInValidation()">
 					<h2 align="left">Shop Information</h2>
 					<div id="shopNameAndCategory">
 						<div class="card">
@@ -222,7 +222,7 @@
 									<div class="row">
 										<div class="col input-group mb-3" id="categorySelect">
 											<select name="shopCategoryOptions" class="form-select"
-												id="shopCategorySelect" onchange="getCategory(this)">
+												id="shopCategoryOptions">
 												<%
 												while (rs2.next()) {
 												%>
@@ -235,10 +235,6 @@
 											</select>
 										</div>
 									</div>
-									<%
-									String selected = request.getParameter("shopCategoryOptions");
-									%>
-
 									<%
 									conn.close();
 									} catch (Exception e) {
@@ -264,7 +260,7 @@
 											<div class="row">
 												<div class="col input-group mb-3" id="stateSelect">
 													<select name="stateOptions" class="form-select"
-														onchange="getStateValue(this)">
+														>
 														<%
 														while (rs.next()) {
 														%>
@@ -287,19 +283,6 @@
 											} catch (Exception e) {
 											e.printStackTrace();
 
-											}
-											%>
-											<%
-											Cookie[] cookies = request.getCookies();
-											if (cookies != null) {
-												for (Cookie cookie : cookies) {
-													if (cookie.getName().equals("selectedStateValue")) {
-												String selectedStateValue = cookie.getValue();
-												out.println(selectedStateValue);
-
-												break;
-													}
-												}
 											}
 											%>
 
@@ -347,7 +330,7 @@
 										</div>
 										<div class="col-sm">
 											<label for="shopCity">City</label> <input type="text"
-												id="shopCity" class="form-control" placeholder="Enter City">
+												id="shopCity" name="shopCity" class="form-control" placeholder="Enter City">
 										</div>
 										<div class="col-sm">
 											<label for="shopZip">Zip Code</label> <input type="number"
@@ -393,7 +376,7 @@
 								<div class="row g-3" id="shopContactnumber">
 									<div class="col-sm-7" id="contactSection">
 										<label for="phnNumber">Primary contact number</label> <input
-											type="tel" id="phnNumber" class="form-control"
+											type="text" id="phnNumber" name="phnNumber" class="form-control"
 											placeholder="Mobile number">
 									</div>
 
@@ -402,7 +385,7 @@
 								<div class="row g-3" id="shopContact number">
 									<div class="col-sm-7">
 										<label for="shopPhnNumber">Secondary contact number</label> <input
-											type="tel" id="shopPhnNumber" class="form-control"
+											type="text" id="shopPhnNumber" name="shopPhnNumber" class="form-control"
 											placeholder="Mobile number">
 									</div>
 								</div>
@@ -416,23 +399,23 @@
 								<div class="row g-3" id="OwnerNumber">
 									<div class="col-sm-7" id="contactSectionOwner">
 										<label for="ownerNumber">Contact number</label> <input
-											type="tel" class="form-control" placeholder="Mobile number"
-											id="ownerNumber">
+											type="text" class="form-control" placeholder="Mobile number"
+											id="ownerNumber" name="ownerNumber">
 									</div>
 								</div>
 								<br>
 								<div class="row g-3" id="ownerNameSection">
 									<div class="col">
 										<label for="ownerName">Owner name</label> <input type="text"
-											class="form-control" placeholder="First name" id="ownerName">
+											class="form-control" placeholder="First name" id="ownerName" name="ownerName">
 									</div>
 									<div class="col">
 										<br> <input type="text" class="form-control"
-											placeholder="Middle name -optional">
+											placeholder="Middle name -optional" id="ownerMiddleName" name="ownerMiddleName">
 									</div>
 									<div class="col">
 										<br> <input type="text" class="form-control"
-											placeholder="Last name" id="ownerLastName">
+											placeholder="Last name" id="ownerLastName" name="ownerLastName">
 									</div>
 								</div>
 								<br>
