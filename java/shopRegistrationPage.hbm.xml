@@ -21,5 +21,6 @@
 <property name="ownerMiddleName"></property>
 <property name="ownerLastName"></property>
 <property name="ownerEmailID"></property>
+<property name="shopPassword"></property>
 </class>
 </hibernate-mapping>
