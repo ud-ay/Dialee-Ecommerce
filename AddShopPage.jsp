@@ -73,7 +73,7 @@
 								</div>
 								<br> <br>
 								<div class="row" id="RegInButton">
-									<a href="signInPage.jsp" rel="nofollow"
+									<a href="registeredAlreadySignIn.jsp" rel="nofollow"
 										class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Registered
 										already? Sign in</a>
 								</div>
@@ -94,7 +94,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
 						<div class="logo">
-							<br> <a href="index.jsp"><img
+							<br> <a><img
 								src="assets/images/DialeeLogoFooter.png" alt="" width="180"
 								height="30.3"></a>
 						</div>
@@ -103,15 +103,8 @@
 
 				<div class="col-lg-3 col-md-6">
 					<br>
-					<div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
-						<h3>About Us</h3>
-						<ul class="links">
-							<li><a href="javascript:void(0)">Home</a></li>
-							<li><a href="javascript:void(0)">Services</a></li>
-							<li><a href="javascript:void(0)">About Us</a></li>
-							<li><a href="javascript:void(0)">How it works</a></li>
-						</ul>
-					</div>
+					<br>
+					<br>
 				</div>
 
 			</div>
