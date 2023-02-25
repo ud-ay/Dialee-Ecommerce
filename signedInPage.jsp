@@ -47,13 +47,6 @@
 								src="assets/images/DialeeLogo.png" alt="" width="180"
 								height="28.3" />
 							</a>
-							<!-- <button class="navbar-toggler" type="button"
-								data-toggle="collapse" data-target="#navbarSupportedContent"
-								aria-controls="navbarSupportedContent" aria-expanded="true"
-								aria-label="Toggle navigation">
-								<span class="toggler-icon"></span> <span class="toggler-icon"></span>
-								<span class="toggler-icon"></span>
-							</button> -->
 
 							<div
 								class="collapse navbar-collapse sub-menu-bar nav justify-content-end"
@@ -308,7 +301,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
 						<div class="logo">
-							<br> <a href="index.jsp"><img
+							<br> <a><img
 								src="assets/images/DialeeLogoFooter.png" alt="" width="180"
 								height="30.3"></a>
 						</div>
