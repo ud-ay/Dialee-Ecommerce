@@ -66,6 +66,12 @@ i {
 </style>
 </head>
 <body>
+	<%
+	out.print(session.getAttribute("ownerData"));
+	if (session == null || session.getAttribute("ownerData") == null) {
+		response.sendRedirect("AddShopPage.jsp");
+	} else {
+	%>
 	<header class="header">
 		<div class="navbar-area">
 			<div class="container">
@@ -80,7 +86,7 @@ i {
 								class="collapse navbar-collapse sub-menu-bar nav justify-content-end"
 								id="navbarSupportedContent">
 								<ul id="nav" class="navbar-nav ml-auto">
-									<li><a class="dropdown-item" href="#"> <i
+									<li><a class="dropdown-item" href="loggedOutSession.jsp"> <i
 											class="material-symbols-outlined">logout</i>
 									</a></li>
 								</ul>
@@ -256,7 +262,9 @@ i {
 	<a href="#" class="scroll-top btn-hover"> <i
 		class="fa fa-chevron-up"></i>
 	</a>
-
+	<%
+	}
+	%>
 
 
 	<script
