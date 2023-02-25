@@ -78,7 +78,7 @@ i {
 				<div class="row align-items-center">
 					<div class="col-lg-12">
 						<nav class="navbar navbar-expand-lg">
-							<a class="navbar-brand" href="index.jsp"> <img
+							<a class="navbar-brand"> <img
 								src="assets/images/DialeeLogo.png" alt="" width="180"
 								height="28.3" />
 							</a> <br>
@@ -249,7 +249,7 @@ i {
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
 						<div class="logo">
-							<br> <a href="index.jsp"><img
+							<br> <a><img
 								src="assets/images/DialeeLogoFooter.png" alt="" width="180"
 								height="30.3"></a>
 						</div>
