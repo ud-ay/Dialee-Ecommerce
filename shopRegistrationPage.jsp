@@ -310,7 +310,7 @@
 											try {
 												Class.forName(driver);
 												connd = DriverManager.getConnection(connectionUrl, userName, passWord);
-												String sql = "SELECT stateDistricts from districts where districtID='kl'";
+												String sql = "SELECT stateDistricts from districts";
 												PreparedStatement stmt = connd.prepareStatement(sql);
 												ResultSet rs = stmt.executeQuery(sql);
 												while (rs.next()) {
